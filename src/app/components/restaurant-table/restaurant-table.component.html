@@ -1,0 +1,18 @@
+<table style="width:50%">
+  <tr>
+    <th>Nom</th>
+    <th>Adresse</th>
+    <th>Note Moyenne</th>
+    <th>Lien</th>
+  </tr>
+  <tr *ngFor="let restaurant of restaurant"  appMoyenne="{{restaurant.moyenne}}">
+    <td>{{restaurant.nom}}</td>
+    <td>{{restaurant.adresse}}</td>
+    <td *ngIf="restaurant.moyenne == -1 ">/</td>
+    <td *ngIf="restaurant.moyenne != -1 ">{{restaurant.moyenne}}</td>
+
+
+    <td><a href="/restaurant/{{restaurant.id}}" class="button">Details</a></td>
+  </tr>
+
+</table>
